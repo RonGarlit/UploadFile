@@ -36,7 +36,8 @@ namespace UploadFile.Pages
         {
             if (file != null)
             {
-                if (file.Length > 0 && file.Length < 300000)
+                // Changed file length to allow LARGE PDF files. - RG 2022-08-16
+                if (file.Length > 0 && file.Length < 5000000)
                 {
                     var myInv = _context.Invoices.FirstOrDefault(x => x.Id == ID);
 
